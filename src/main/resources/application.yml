@@ -3,5 +3,7 @@ spring:
     name: eureka
   config:
     import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+  profiles:
+    active: docker
 server:
   port: 8761
