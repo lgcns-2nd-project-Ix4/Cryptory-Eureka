@@ -55,7 +55,8 @@ pipeline {
                     "RABBITMQ_HOST=${env.RABBITMQ_HOST}",
                     "RABBITMQ_PORT=${env.RABBITMQ_PORT}",
                     "RABBITMQ_USERNAME=${env.RABBITMQ_USERNAME}",
-                    "RABBITMQ_PASSWORD=${env.RABBITMQ_PASSWORD}"
+                    "RABBITMQ_PASSWORD=${env.RABBITMQ_PASSWORD}",
+                    "EUREKA_URL=${env.EUREKA_URL}"
                 ]){
 					sshPublisher(
                         publishers: [
@@ -78,6 +79,7 @@ pipeline {
                                                 -e RABBITMQ_PORT=$RABBITMQ_PORT \\
                                                 -e RABBITMQ_USERNAME=$RABBITMQ_USERNAME \\
                                                 -e RABBITMQ_PASSWORD=$RABBITMQ_PASSWORD \\
+                                                -e EUREKA_URL=$EUREKA_URL \\
                                                 $ECR_REPO:latest
                                             echo "Deploy successful"
                                         """,
