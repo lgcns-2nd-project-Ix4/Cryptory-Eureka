@@ -56,7 +56,7 @@ pipeline {
                     "RABBITMQ_PORT=${env.RABBITMQ_PORT}",
                     "RABBITMQ_USERNAME=${env.RABBITMQ_USERNAME}",
                     "RABBITMQ_PASSWORD=${env.RABBITMQ_PASSWORD}",
-                    "EUREKA_URL=${env.EUREKA_URL}"
+                    "EUREKA_URL=${env.EUREKA_HOST}"
                 ]){
 					sshPublisher(
                         publishers: [
